@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { Link, withRouter, Redirect } from 'react-router-dom'
 import clienteAxios from '../config/axios';
+import Nav from './Nav';
 
 const NuevoVideo = () => {
 
@@ -55,10 +56,12 @@ const NuevoVideo = () => {
     if (redirect) {
         return <Redirect to={'/videos'} />
     }
+    const filter = console.log("Acción no permitida")
 
     return (
         <Fragment>
-            <div className="videos">
+            <Nav filter={filter} />
+            <div className="videos-upload">
                 <div className="container pt-5">
                     <div className="row">
 
@@ -125,7 +128,7 @@ const NuevoVideo = () => {
                                 </div>
 
 
-                                <input type="submit" className="btn btn-primary mt-3 w-100 p-3 text-uppercase font-weight-bold" value="Crear Cita" />
+                                <input type="submit" className="btn btn-primary mt-3 w-100 p-3 text-uppercase font-weight-bold" value="Subir video" />
                             </form>
                         </div>
 
